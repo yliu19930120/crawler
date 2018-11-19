@@ -7,7 +7,7 @@ class LogUtil():
     def get_logger():
         logger_obj = logging.getLogger()  # 创建一个logger对象，它提供了应用程序可以直接使用的接口，其类型为“<class 'logging.RootLogger'>”；
         logger_obj.setLevel(logging.DEBUG)
-        fh = logging.FileHandler("crawler.log")  # 创建一个文件输出流；
+        fh = logging.FileHandler("../logs/crawler.log")  # 创建一个文件输出流；
         fh.setLevel(logging.DEBUG)  # 定义文件输出流的告警级别；
 
         ch = logging.StreamHandler()  # 创建一个屏幕输出流；

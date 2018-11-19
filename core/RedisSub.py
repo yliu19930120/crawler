@@ -1,5 +1,4 @@
-#!/usr/bin/python
-from core import RedisUtil
+from .import RedisUtil
 
 class RedisSub:
     def __init__(self,channel='CRAWLER_CHANNEL'):

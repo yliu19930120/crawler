@@ -3,7 +3,7 @@ import time
 
 from bs4 import BeautifulSoup
 
-from core import LogUtil
+from .import LogUtil
 
 
 class Crawler():
