@@ -1,8 +1,10 @@
 import RedisUtil
+import LogUtil
 
 class RedisSub:
     def __init__(self,channel='CRAWLER_CHANNEL'):
         self.channel = channel
+        self.log = LogUtil.LogUtil.get_logger()
     def psubscribe(self):
         """
         订阅方法
@@ -14,10 +16,10 @@ class RedisSub:
 
     def listen(self):
         pub = self.psubscribe()
-        print('监听消息中...')
+        self.log.info('监听消息中...')
         while True:
             msg = pub.get_message(timeout=86400)
-            print("收到订阅消息 %s" % msg['data'])
+            self.log.info("收到订阅消息 %s" % msg['data'])
 
 
 if __name__ == '__main__':
