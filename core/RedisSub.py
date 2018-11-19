@@ -1,4 +1,4 @@
-from .import RedisUtil
+import RedisUtil
 
 class RedisSub:
     def __init__(self,channel='CRAWLER_CHANNEL'):
