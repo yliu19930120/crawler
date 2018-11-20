@@ -10,6 +10,7 @@ requests = "*"
 beautifulsoup4 = "*"
 html5lib = "*"
 redis = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.7"

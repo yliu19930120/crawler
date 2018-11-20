@@ -1,6 +1,7 @@
 import RedisUtil
 # import LogUtil
 import LogUtil
+import tasks
 
 
 class RedisSub:
@@ -20,9 +21,10 @@ class RedisSub:
         pub = self.psubscribe()
         self.log.info('监听消息中...')
         while True:
-            msg = pub.get_message(timeout=86400)
-            self.log.info("收到订阅消息 %s" % msg['data'])
-
+            full_msg = pub.get_message(timeout=86400)
+            msg = full_msg['data']
+            self.log.info("收到订阅消息 %s" , msg)
+            tasks.Task().runJob(msg)
 
 if __name__ == '__main__':
     RedisSub().listen()
