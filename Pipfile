@@ -11,6 +11,7 @@ beautifulsoup4 = "*"
 html5lib = "*"
 redis = "*"
 numpy = "*"
+pymongo = "*"
 
 [requires]
 python_version = "3.7"
